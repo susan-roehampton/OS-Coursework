@@ -11,6 +11,19 @@ This coursework uses a **dual-system architecture** consisting of:
 
 The workstation securely connects to the server through a private virtual network. All administration of the server is performed remotely from the workstation.
 
+```
++-------------------------------+        SSH         +-------------------------------+
+|       Windows Workstation     |  <------------>  |        Ubuntu Server 24.04     |
+|                               |   NAT Network    |                               |
+| - PowerShell (SSH Client)     |                  | - Headless (CLI only)         |
+| - GitHub Pages Documentation |                  | - UFW Firewall                |
+| - Monitoring Scripts         |                  | - AppArmor                    |
+|                               |                  | - Fail2Ban                    |
++-------------------------------+                  +-------------------------------+
+
+             <-------  VirtualBox NAT Private Network  ------->
+```
+
 ---
 
 ## 2. System Architecture Diagram (Description)
