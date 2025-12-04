@@ -1,9 +1,9 @@
 # Operating Systems Coursework Journal
 
-**Student Name:** Susan Thapa 
-**Student ID:** A00023010
-**Module:** CMPN202 – Operating Systems   
-**University:** University of Roehampton  
+- **Student Name:** Susan Thapa 
+- **Student ID:** A00023010
+- **Module:** CMPN202 – Operating Systems   
+- **University:** University of Roehampton  
 
 ---
 
