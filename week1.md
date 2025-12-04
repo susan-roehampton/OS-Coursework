@@ -2,7 +2,13 @@
 
 ---
 
-## 1. System Architecture Overview
+## 1. Introduction
+
+The aim of this week was to plan the operating system deployment, select a suitable Linux server distribution, and configure the basic virtual environment required for the coursework. A dual-system architecture was designed to reflect real-world professional practice where system administration is carried out remotely.
+
+---
+
+## 2. System Architecture Overview
 
 This coursework uses a **dual-system architecture** consisting of:
 
@@ -25,8 +31,6 @@ The workstation securely connects to the server through a private virtual networ
 ```
 
 ---
-
-## 2. System Architecture Diagram (Description)
 
 The architecture consists of:
 
