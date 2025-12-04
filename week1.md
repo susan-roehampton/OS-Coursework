@@ -10,10 +10,10 @@ The aim of this week was to plan the operating system deployment, select a suita
 
 ## 2. System Architecture Overview
 
-This coursework uses a **dual-system architecture** consisting of:
+This coursework uses a dual-system architecture consisting of:
 
-- **Workstation:** Windows host machine used for SSH access, monitoring, and GitHub documentation.
-- **Server:** Ubuntu Server 24.04 LTS running headless (command-line only) inside VirtualBox.
+- Workstation: Windows host machine used for SSH access, monitoring, and GitHub documentation.
+- Server: Ubuntu Server 24.04 LTS running headless (command-line only) inside VirtualBox.
 
 The workstation securely connects to the server through a private virtual network. All administration of the server is performed remotely from the workstation.
 
@@ -42,7 +42,7 @@ The Windows workstation acts as the control machine, while the Ubuntu Server act
 
 ## 3. Distribution Selection Justification
 
-**Ubuntu Server 24.04 LTS** was selected as the server operating system for the following reasons:
+Ubuntu Server 24.04 LTS was selected as the server operating system for the following reasons:
 
 - Long-Term Support (LTS) provides extended security updates and stability.
 - Excellent documentation and a very large user community.
@@ -53,13 +53,13 @@ The Windows workstation acts as the control machine, while the Ubuntu Server act
 - **Debian Server:** Very stable but slower update cycle.
 - **CentOS Stream:** Good enterprise features but more complex for beginners.
 
-Ubuntu Server was chosen because it provides a balance between **professional-grade stability** and **beginner-friendly documentation**.
+Ubuntu Server was chosen because it provides a balance between professional-grade stability and beginner-friendly documentation.
 
 ---
 
 ## 4. Workstation Configuration Decision
 
-The **Windows host machine** was selected as the workstation. This allows the use of:
+The Windows host machine was selected as the workstation. This allows the use of:
 
 - Windows PowerShell for SSH access.
 - A web browser for GitHub Pages documentation.
