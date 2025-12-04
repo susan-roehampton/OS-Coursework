@@ -77,8 +77,8 @@ The following commands were executed on the Ubuntu Server to document system spe
 - `lsb_release -a` – Displays Ubuntu version information  
 
 Screenshot evidence of these commands is provided below:
+<img width="1284" height="835" alt="Screenshot 2025-12-05 030404" src="https://github.com/user-attachments/assets/732092e2-31ed-40d8-89a2-6edb3a59a068" />
 
-![Week 1 Server CLI Evidence](week1-server-cli.png)
 
 ---
 
