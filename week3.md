@@ -26,41 +26,41 @@ These applications were selected because they are lightweight, reliable, widely 
 
 All applications will be installed remotely on the Ubuntu Server using SSH from the Windows workstation.
 
-stress-ng (CPU and Memoery Testing Tool)
+- stress-ng (CPU and Memoery Testing Tool)
 sudo apt install stress-ng -y
 
-Disk I/O Testing Tool
+- Disk I/O Testing Tool
 The dd command is a built-in Linux utility and does not require installation.
 
-Network Performance Testing Tool)
+- Network Performance Testing Tool)
 sudo apt install iperf3 -y
 
-Apache2 Web Server (Server Application)
+- Apache2 Web Server (Server Application)
 sudo apt install apache2 -y
 
 ---
 
 ## 4. Expected Resource Profiles
 
-stress-ng
+- stress-ng
 
 Very high CPU usage during stress testing
 High memory usage when RAM tests are executed
 Minimal disk and network activity
 
-dd
+- dd
 
 Very high disk read and write activity
 Moderate CPU usage
 No network usage
 
-iperf3
+- iperf3
 
 Very high network bandwidth usage
 Low CPU usage
 Low memory usage
 
-Apache2
+- Apache2
 
 Moderate CPU usage under client load
 Moderate memory usage
