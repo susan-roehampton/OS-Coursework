@@ -27,8 +27,6 @@ These applications were selected because they are lightweight, reliable, widely 
 All applications will be installed remotely on the Ubuntu Server using SSH from the Windows workstation.
 
 stress-ng (CPU and Memoery Testing Tool)
-```bash
-sudo apt update
 sudo apt install stress-ng -y
 
 Disk I/O Testing Tool
@@ -68,7 +66,9 @@ Moderate CPU usage under client load
 Moderate memory usage
 Continuous network activity during web requests
 
-5. Monitoring Strategy
+---
+
+# 5. Monitoring Strategy
 
 The following tools will be used to monitor system performance during testing:
 
@@ -80,6 +80,8 @@ The following tools will be used to monitor system performance during testing:
 -  ping – Network latency testing
 -  uptime – System load averages
 
+---
+
 # Performance data will be collected during:
 
 Baseline testing
@@ -90,7 +92,7 @@ All results will be recorded in structured performance tables and visualised usi
 
 ---
 
-6. Reflection
+# 6. Reflection
 
 This week helped me understand how different applications stress different system resources. Using both built-in and external monitoring tools demonstrated how operating systems handle CPU, memory, disk, and network workloads differently.
 This preparation ensures that the performance testing in Week 6 will be structured, repeatable, and supported with quantitative evidence.
