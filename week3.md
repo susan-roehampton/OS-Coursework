@@ -42,29 +42,29 @@ sudo apt install apache2 -y
 
 ## 4. Expected Resource Profiles
 
-- stress-ng
+stress-ng
 
-Very high CPU usage during stress testing
-High memory usage when RAM tests are executed
-Minimal disk and network activity
+- Very high CPU usage during stress testing
+- High memory usage when RAM tests are executed
+- Minimal disk and network activity
 
-- dd
+dd
 
-Very high disk read and write activity
-Moderate CPU usage
-No network usage
+- Very high disk read and write activity
+- Moderate CPU usage
+- No network usage
 
-- iperf3
+iperf3
 
-Very high network bandwidth usage
-Low CPU usage
-Low memory usage
+- Very high network bandwidth usage
+- Low CPU usage
+- Low memory usage
 
-- Apache2
+Apache2
 
-Moderate CPU usage under client load
-Moderate memory usage
-Continuous network activity during web requests
+- Moderate CPU usage under client load
+- Moderate memory usage
+- Continuous network activity during web requests
 
 ---
 
