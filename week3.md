@@ -84,9 +84,9 @@ The following tools will be used to monitor system performance during testing:
 
 # Performance data will be collected during:
 
-Baseline testing
-Application stress testing
-Post-optimisation testing
+- Baseline testing
+- Application stress testing
+- Post-optimisation testing
 
 All results will be recorded in structured performance tables and visualised using charts and graphs in Week 6.
 
