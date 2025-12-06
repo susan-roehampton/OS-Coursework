@@ -13,6 +13,10 @@ in line with the administrative constraints of the coursework.
 
 A non-root administrative user named `studentadmin` was created to enforce the principle of least privilege and reduce the security risks associated with direct root usage.
 
+### 📸 Evidence – Non-root Administrative User
+![Non-root user creation](images/week4-nonroot-user.png)
+
+
 ### Commands Used:
 sudo adduser studentadmin  
 sudo usermod -aG sudo studentadmin  
@@ -27,6 +31,13 @@ This confirms the user had been created correctly and granted administrative pri
 ## 3. Firewall Configuration
 
 The Uncomplicated Firewall (UFW) was enabled and configured to allow SSH access while blocking all other incoming connections.
+
+### 📸 Evidence – Firewall Enabled
+![UFW Enabled](images/week4-ufw-enable.png)
+
+### 📸 Evidence – Firewall Rules
+![UFW Status](images/week4-ufw-status.png)
+
 
 ### Commands Used:
 sudo ufw allow ssh  
@@ -43,6 +54,10 @@ Firewall Status Confirmed:
 ## 4. SSH Hardening
 
 The SSH configuration file was edited to disable root login for enhanced security.
+
+### 📸 Evidence – Root Login Disabled
+![SSH Root Login Disabled](images/week4-ssh-after.png)
+
 
 ### File Modified:
 /etc/ssh/sshd_config  
@@ -64,6 +79,10 @@ A successful SSH connection was verified after security hardening to confirm tha
 ssh susanserver@10.0.2.15  
 
 The login completed successfully using the non-root administrative user.
+
+### 📸 Evidence – Successful SSH Login After Hardening
+![SSH Login Success](images/week4-ssh-login-after-hardening.png)
+
 
 ---
 
