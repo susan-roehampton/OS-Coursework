@@ -13,14 +13,14 @@ This website documents the step-by-step deployment, security configuration, moni
 
 ---
 
-## Table of Contents
+##  📚 Table of Contents
 
-- [Week 1 – System Planning and Setup](week1.md)
-- [Week 2 – Security Planning and Threat Modelling](week2.md)
-- [Week 3 – Application Selection](week3.md)
-- [Week 4 – SSH, Firewall & User Management](week4.md)
-- [Week 5 – Advanced Security & Monitoring](week5.md)
-- [Week 6 – Performance Testing](week6.md)
-- [Week 7 – Security Audit & Evaluation](week7.md)
+- 🖥️[Week 1 – System Planning and Setup](week1.md)
+- 🔐[Week 2 – Security Planning and Threat Modelling](week2.md)
+- ⚙️[Week 3 – Application Selection](week3.md)
+- 🛡️[Week 4 – Initial System Configuration & Security Implementation](week4.md)
+- 🧪[Week 5 – Advanced Security & Monitoring](week5.md)
+- 📊[Week 6 – Performance Testing](week6.md)
+- ✅[Week 7 – Security Audit & Evaluation](week7.md)
 
 ---
