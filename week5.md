@@ -120,6 +120,50 @@ Evidence 4 – SSH Jail Active:
 
 The security baseline verification script was created to automatically validate that all security configurations from Week 4 and Week 5 remain enforced.
 
+#!/bin/bash
+# -------------------------------------------------
+# Security Baseline Verification Script
+# Verifies firewall, SSH, AppArmor, updates & Fail2Ban
+# -------------------------------------------------
+
+echo "======== SECURITY BASELINE CHECK ========"
+
+echo ""
+echo "1. SSH SERVICE STATUS:"
+systemctl status ssh --no-pager | head -n 5
+
+echo ""
+echo "2. FIREWALL STATUS (UFW):"
+sudo ufw status verbose
+
+echo ""
+echo "3. FAIL2BAN STATUS:"
+sudo systemctl status fail2ban --no-pager | head -n 5
+
+echo ""
+echo "4. FAIL2BAN SSH JAIL STATUS:"
+sudo fail2ban-client status sshd
+
+echo ""
+echo "5. APPARMOR STATUS:"
+sudo aa-status
+
+echo ""
+echo "6. AUTOMATIC UPDATES STATUS:"
+cat /etc/apt/apt.conf.d/20auto-upgrades
+
+echo ""
+echo "7. ACTIVE USERS:"
+cut -d: -f1 /etc/passwd
+
+echo ""
+echo "8. LISTENING NETWORK PORTS:"
+ss -tuln
+
+echo ""
+echo "======== VERIFICATION COMPLETE ========"
+
+
 ### Script Execution
 
 bash security-baseline.sh  
@@ -142,6 +186,61 @@ This script ensures continuous compliance with the defined server security basel
 ## 6. Remote Monitoring Script (monitor-server.sh)
 
 A remote monitoring script was created on the Windows workstation using Git Bash. The script connects to the Ubuntu Server via SSH and collects real-time performance and security metrics.
+
+#!/bin/bash
+# -------------------------------------------------
+# Remote Monitoring Script
+# Connects to server via SSH and collects performance metrics
+# -------------------------------------------------
+
+SERVER_USER="susanserver"
+SERVER_IP="192.168.56.103"
+
+echo "===================================="
+echo " Remote Server Monitoring Script"
+echo "===================================="
+
+
+echo "===== SERVER UPTIME ====="
+ssh "$SERVER_USER@$SERVER_IP" "uptime"
+echo""
+
+echo "===== CPU USAGE ====="
+ssh "$SERVER_USER@$SERVER_IP" "top -bin | grep 'Cpu(s)'"
+echo ""
+
+echo "===== MEMORY USAGE ====="
+ssh "$SERVER_USER@$SERVER_IP" "free -h"
+echo ""
+
+echo "===== DISK USAGE (ROOT FILESYSTEM) ====="
+ssh "$SERVER_USER@$SERVER_IP" "df -h /"
+echo ""
+
+echo "===== ACTIVE USERS ====="
+ssh "$SERVER_USER@$SERVER_IP" "who"
+echo ""
+
+echo "===== LISTENING NETWORK PORTS ====="
+ssh "$SERVER_USER@$SERVER_IP" "ss -tuln"
+echo ""
+
+echo "===== FAIL2BAN STATUS ====="
+ssh -t "$SERVER_USER@$SERVER_IP" "sudo fail2ban-client status sshd"
+echo ""
+
+echo "===== UFW FIREWALL STATUS ====="
+ssh -t "$SERVER_USER@$SERVER_IP" "sudo ufw status verbose"
+echo ""
+
+echo "===== APPARMOR STATUS ====="
+ssh -t "$SERVER_USER@$SERVER_IP" "sudo aa-status"
+echo ""
+
+echo "===== MONITORING COMPLETE ====="
+
+EOF
+
 
 ### Metrics Collected
 
