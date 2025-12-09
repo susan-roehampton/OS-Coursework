@@ -121,8 +121,10 @@ Evidence 4 – SSH Jail Active:
 The security baseline verification script was created to automatically validate that all security configurations from Week 4 and Week 5 remain enforced.
 
 #!/bin/bash
-#!Security Baseline Verification Script
-#!Verifies firewall, SSH, AppArmor, updates & Fail2Ban
+
+#Security Baseline Verification Script
+
+#Verifies firewall, SSH, AppArmor, updates & Fail2Ban
 
 echo "======== SECURITY BASELINE CHECK ========"
 
@@ -186,8 +188,10 @@ This script ensures continuous compliance with the defined server security basel
 A remote monitoring script was created on the Windows workstation using Git Bash. The script connects to the Ubuntu Server via SSH and collects real-time performance and security metrics.
 
 #!/bin/bash
-#!Remote Monitoring Script
-#!Connects to server via SSH and collects performance metrics
+
+#Remote Monitoring Script
+
+#Connects to server via SSH and collects performance metrics
 
 
 SERVER_USER="susanserver"
@@ -197,38 +201,54 @@ echo "===================================="
 echo " Remote Server Monitoring Script"
 echo "===================================="
 
+#show server uptime
 
 echo "===== SERVER UPTIME ====="
 ssh "$SERVER_USER@$SERVER_IP" "uptime"
 echo""
 
+#show CPU usage
+
 echo "===== CPU USAGE ====="
 ssh "$SERVER_USER@$SERVER_IP" "top -bin | grep 'Cpu(s)'"
 echo ""
+
+#show memory usage
 
 echo "===== MEMORY USAGE ====="
 ssh "$SERVER_USER@$SERVER_IP" "free -h"
 echo ""
 
+#show disk usage
+
 echo "===== DISK USAGE (ROOT FILESYSTEM) ====="
 ssh "$SERVER_USER@$SERVER_IP" "df -h /"
 echo ""
+
+#show active users
 
 echo "===== ACTIVE USERS ====="
 ssh "$SERVER_USER@$SERVER_IP" "who"
 echo ""
 
+#show listening network ports
+
 echo "===== LISTENING NETWORK PORTS ====="
 ssh "$SERVER_USER@$SERVER_IP" "ss -tuln"
 echo ""
 
+#show fail2ban status
+
 echo "===== FAIL2BAN STATUS ====="
 ssh -t "$SERVER_USER@$SERVER_IP" "sudo fail2ban-client status sshd"
 echo ""
+#show UFW firewall status
 
 echo "===== UFW FIREWALL STATUS ====="
 ssh -t "$SERVER_USER@$SERVER_IP" "sudo ufw status verbose"
 echo ""
+
+#show apparmor status
 
 echo "===== APPARMOR STATUS ====="
 ssh -t "$SERVER_USER@$SERVER_IP" "sudo aa-status"
