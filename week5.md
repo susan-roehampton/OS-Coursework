@@ -121,10 +121,8 @@ Evidence 4 – SSH Jail Active:
 The security baseline verification script was created to automatically validate that all security configurations from Week 4 and Week 5 remain enforced.
 
 #!/bin/bash
-# -------------------------------------------------
-# Security Baseline Verification Script
-# Verifies firewall, SSH, AppArmor, updates & Fail2Ban
-# -------------------------------------------------
+#!Security Baseline Verification Script
+#!Verifies firewall, SSH, AppArmor, updates & Fail2Ban
 
 echo "======== SECURITY BASELINE CHECK ========"
 
@@ -188,10 +186,9 @@ This script ensures continuous compliance with the defined server security basel
 A remote monitoring script was created on the Windows workstation using Git Bash. The script connects to the Ubuntu Server via SSH and collects real-time performance and security metrics.
 
 #!/bin/bash
-# -------------------------------------------------
-# Remote Monitoring Script
-# Connects to server via SSH and collects performance metrics
-# -------------------------------------------------
+#!Remote Monitoring Script
+#!Connects to server via SSH and collects performance metrics
+
 
 SERVER_USER="susanserver"
 SERVER_IP="192.168.56.103"
