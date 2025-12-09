@@ -45,6 +45,28 @@ df -h /
 uptime  
 ps aux --sort=%cpu | head -10  
 
+Evidence:  
+![Baseline CPU Memory](week6-baseline-cpu-mem.png)
+<img width="1265" height="917" alt="week6-baseline-cpu-mem" src="https://github.com/user-attachments/assets/8de96c0b-c95d-4c71-a11a-fb2bb1af40c0" />
+
+Evidence:  
+![Baseline Disk](week6-baseline-disk-usage.png)
+<img width="1274" height="922" alt="week6-baseline-disk-usage" src="https://github.com/user-attachments/assets/d53c4372-aceb-4fb3-a536-9c5ac742d9e3" />
+
+Evidence:  
+![SSH Baseline](week6-ssh-latency-before.png)
+<img width="916" height="519" alt="week6-ssh-latency-before" src="https://github.com/user-attachments/assets/29ff9696-2f54-45a8-847e-96c6d4efa208" />
+
+Evidence:  
+![Swappiness Before](week6-swappiness-before.png)
+<img width="1017" height="719" alt="week6-swappiness-before" src="https://github.com/user-attachments/assets/4f8552f2-bc54-4194-8ea0-54deed6253e1" />
+
+Evidence:  
+![Disk Before](week6-disk-before.png)
+<img width="1018" height="902" alt="week6-disk-before" src="https://github.com/user-attachments/assets/e15fe116-512a-4155-9fe0-b2f726ff503a" />
+
+---
+
 ### Baseline Results:
 - CPU Usage: ~0–3%
 - Memory Usage: ~445MB Used / 3.8GB Total
@@ -61,7 +83,49 @@ This represents stable system behaviour under normal conditions.
 Load testing was performed using CPU stress simulation.
 
 ### Command Used:
-stress --cpu 2 --timeout 60  
+stress --cpu 4 --timeout 120
+
+### Stress Tool Installation
+Command:
+sudo apt install stress -y  
+
+Evidence:  
+![Stress Install](week6-stress-install.png)
+<img width="891" height="765" alt="week6-stress-install" src="https://github.com/user-attachments/assets/dd95e9fc-b8d4-4809-88bc-713faf775d08" />
+
+---
+
+### CPU Load Test
+Command:
+stress --cpu 4 --timeout 120  
+
+Evidence:  
+![Stress Running](week6-stress-running.png)
+<img width="959" height="689" alt="week6-stress-running" src="https://github.com/user-attachments/assets/72651ddc-4215-44ee-8346-53963a7b776d" />
+
+---
+
+### Load CPU, Memory & Disk
+Commands:
+top -bn1 | head -5  
+free -h  
+df -h /  
+
+Evidence:  
+![Load CPU MEM DISK](week6-load-cpu-mem-disk.png)
+<img width="1891" height="1081" alt="week6-load-cpu-mem-disk" src="https://github.com/user-attachments/assets/9d707838-a9ee-4132-82bf-2e95eec0aab9" />
+
+---
+
+### Load Uptime & Top Processes
+Commands:
+uptime  
+ps aux --sort=-%cpu | head -10  
+
+Evidence:  
+![Load Uptime Top5](week6-load-uptime-top5.png)
+<img width="1860" height="1094" alt="week6-load-uptime-top5" src="https://github.com/user-attachments/assets/5371acac-ccf6-4863-89a8-d3d8e28d4670" />
+
 
 ### Load Test Observations:
 - CPU Usage rose to ~100%
