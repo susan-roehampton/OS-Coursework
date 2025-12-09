@@ -64,11 +64,13 @@ sudo systemctl status unattended-upgrades
 
 ### Evidence
 
-Installation, Enable Screen and Verification:
+Evidence 1: Installation
 <img width="1273" height="916" alt="week5-unattended-install" src="https://github.com/user-attachments/assets/6da2ecac-16b1-4967-9156-1192ab5d5112" />
 
+Evidence 2: Enable Screen
 <img width="1278" height="914" alt="week5-unattended-enable" src="https://github.com/user-attachments/assets/64439658-f4a6-4045-be75-9875ab8faad3" />
 
+Evidence 3: Verification
 <img width="1274" height="918" alt="week5-unattended-verify" src="https://github.com/user-attachments/assets/abe7d04c-351e-405e-92c3-c04d8882f481" />
 
 
