@@ -18,10 +18,11 @@ AppArmor is a Mandatory Access Control (MAC) system used to restrict program acc
 
 ### Commands Used
 
+```
 sudo systemctl enable apparmor  
 sudo systemctl start apparmor  
 sudo aa-status  
-
+```
 These commands were used to enable AppArmor at boot, start the service, and verify that security profiles are actively enforced on the system.
 
 ### Purpose
@@ -45,9 +46,11 @@ Automatic security updates ensure that critical patches are installed without re
 
 ### Commands Used
 
+```
 sudo apt update  
 sudo apt install unattended-upgrades -y  
 sudo dpkg-reconfigure unattended-upgrades  
+```
 
 ### Verification
 
@@ -61,7 +64,13 @@ sudo systemctl status unattended-upgrades
 
 ### Evidence
 
-images/auto-updates-status.png
+Installation, Enable Screen and Verification:
+<img width="1273" height="916" alt="week5-unattended-install" src="https://github.com/user-attachments/assets/6da2ecac-16b1-4967-9156-1192ab5d5112" />
+
+<img width="1278" height="914" alt="week5-unattended-enable" src="https://github.com/user-attachments/assets/64439658-f4a6-4045-be75-9875ab8faad3" />
+
+<img width="1274" height="918" alt="week5-unattended-verify" src="https://github.com/user-attachments/assets/abe7d04c-351e-405e-92c3-c04d8882f481" />
+
 
 ---
 
@@ -71,9 +80,11 @@ Fail2Ban is an intrusion detection system that protects the server against brute
 
 ### Installation and Activation
 
+```
 sudo apt install fail2ban -y  
 sudo systemctl enable fail2ban  
 sudo systemctl start fail2ban  
+```
 
 ### Verification
 
@@ -88,8 +99,18 @@ sudo fail2ban-client status sshd
 
 ### Evidence
 
-images/fail2ban-status.png
-<img width="938" height="935" alt="week5-fail2ban-status" src="https://github.com/user-attachments/assets/ec0233ee-915c-4f40-8c50-8ecccdd4db5b" />
+Evidence 1 – Installation:
+<img width="935" height="967" alt="week5-fail2ban-install" src="https://github.com/user-attachments/assets/d635da3d-ca4a-48f4-a218-6c009144229a" />
+
+Evidence 2 – Service Started:
+<img width="939" height="962" alt="week5-fail2ban-start" src="https://github.com/user-attachments/assets/ae7697dc-919d-4dfc-b721-1cc925dab724" />
+
+Evidence 3 – Service Status:
+<img width="938" height="935" alt="week5-fail2ban-status" src="https://github.com/user-attachments/assets/b7f6f844-cb2c-4f94-8c6c-e52a35beb3c5" />
+
+Evidence 4 – SSH Jail Active:
+<img width="950" height="972" alt="week5-fail2ban-sshd" src="https://github.com/user-attachments/assets/5b6f3101-8c73-40bd-b831-c6e793c67416" />
+
 
 ---
 
@@ -111,10 +132,8 @@ bash security-baseline.sh
 
 This script ensures continuous compliance with the defined server security baseline.
 
-### Evidence
-
-images/security-baseline-script-output.png
-<img width="1322" height="1017" alt="week5 -security-baseline-output" src="https://github.com/user-attachments/assets/15e88946-becf-4256-b9e1-af7fda83192f" />
+### Evidence – Script Output:
+<img width="1322" height="1017" alt="week5 -security-baseline-output" src="https://github.com/user-attachments/assets/5bc011ed-0abd-4b9d-be8d-eb61f6a5f21e" />
 
 ---
 
@@ -143,6 +162,11 @@ The script demonstrates professional remote administration practices by combinin
 ### Evidence
 
 images/monitor-server-output.png
+<img width="1303" height="585" alt="monitor-server-output1" src="https://github.com/user-attachments/assets/a4e82504-be1f-4479-a329-8b23c8ee44ec" />
+
+<img width="1421" height="601" alt="monitor-server-output2" src="https://github.com/user-attachments/assets/865d3ea0-1502-421c-91b3-3cc506025a67" />
+
+<img width="606" height="1089" alt="monitor-server-output3" src="https://github.com/user-attachments/assets/e28bb20e-575e-49f1-80e8-fba827440571" />
 
 ---
 
