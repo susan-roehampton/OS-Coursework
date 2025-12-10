@@ -41,9 +41,10 @@ Baseline testing was performed while the system was idle with no artificial work
 ### Commands Used:
 top -bn1 | head -5  
 free -h  
-df -h /  
-uptime  
-ps aux --sort=%cpu | head -10  
+df -h /
+time ssh susanserver@192.168.56.103 "echo baselinetest"
+cat /proc/sys/vm/swappiness  
+sudo blockdev --getra /dev/sda 
 
 Evidence - Baseline CPU Memory
 <img width="1265" height="917" alt="week6-baseline-cpu-mem" src="https://github.com/user-attachments/assets/8de96c0b-c95d-4c71-a11a-fb2bb1af40c0" />
@@ -146,33 +147,100 @@ Two system-level optimisations were implemented.
 
 ---
 
-###  Optimisation 1: Disk I/O Optimisation (Read-Ahead)
+====================================================
+OPTIMISATION 1 – MEMORY OPTIMISATION (SWAPPINESS)
+====================================================
 
-Disk read-ahead was increased to improve file access performance.
+Purpose:
+Reducing swappiness decreases dependency on swap memory and prioritises RAM, improving responsiveness during load.
 
-sudo mount -o remount /  
-sudo blockdev --setra 4096 /dev/sda  
-sudo blockdev --getra /dev/sda  
+------------------------
+BEFORE OPTIMISATION
+------------------------
+Command:
+cat /proc/sys/vm/swappiness
 
- Verification Output:
-4096  
+Output:
+60
 
+Evidence:
+week6-swappiness-before.png
+<img width="1017" height="719" alt="week6-swappiness-before" src="https://github.com/user-attachments/assets/9299aafb-323b-43de-b66d-404102b2bba7" />
 
-Evidence: Disk After
-<img width="1285" height="802" alt="week6-disk-after" src="https://github.com/user-attachments/assets/461ad89c-ef38-4580-83f0-eebc57ad0bf4" />
+------------------------
+APPLY OPTIMISATION
+------------------------
+Command:
+sudo nano /etc/sysctl.conf
+
+Added Line:
+vm.swappiness=10
+
+Apply Change:
+sudo sysctl -p
+
+------------------------
+AFTER OPTIMISATION
+------------------------
+Command:
+cat /proc/sys/vm/swappiness
+
+Output:
+10
+
+Evidence:
+week6-swappiness-after.png
+<img width="1018" height="930" alt="week6-swappiness-after" src="https://github.com/user-attachments/assets/81f35091-c9c6-43b1-a6fb-63d46308c7f7" />
+
+Result:
+Swap usage was reduced, improving memory performance and reducing disk dependency during load tests.
 
 ---
 
-###  Optimisation 2: Memory Optimisation (Swappiness)
+====================================================
+OPTIMISATION 2 – DISK I/O OPTIMISATION (READ-AHEAD BUFFER)
+====================================================
 
-Memory performance was improved by reducing swap preference:
+Purpose:
+Increasing read-ahead improves disk throughput during sequential read operations.
 
-cat /proc/sys/vm/swappiness  
+------------------------
+BEFORE OPTIMISATION
+------------------------
+Command:
+sudo blockdev --getra /dev/sda
 
-Swappiness was reduced to allow better RAM utilisation and reduced disk swapping.
+Output:
+256
 
-Evidence: Swappiness After
-<img width="1018" height="930" alt="week6-swappiness-after" src="https://github.com/user-attachments/assets/e6320070-3b22-43b1-a9cd-b9c33ec037a5" />
+Evidence:
+week6-disk-before.png
+<img width="1018" height="902" alt="week6-disk-before" src="https://github.com/user-attachments/assets/b4773480-30a5-46ec-b3ca-a65b1bc1fb76" />
+
+------------------------
+APPLY OPTIMISATION
+------------------------
+Command:
+sudo blockdev --setra 4096 /dev/sda
+
+Remount Filesystem:
+sudo mount -o remount /
+
+------------------------
+AFTER OPTIMISATION
+------------------------
+Command:
+sudo blockdev --getra /dev/sda
+
+Output:
+4096
+
+Evidence:
+week6-disk-after.png
+<img width="1285" height="802" alt="week6-disk-after" src="https://github.com/user-attachments/assets/1ecf66cc-027f-4483-82fb-63656d155b2d" />
+
+Result:
+Disk read performance improved by increasing read-ahead buffer size.
 
 ---
 
@@ -185,7 +253,7 @@ free -h
 df -h /  
 sudo blockdev --getra /dev/sda  
 
-Evidence: ![Post Optimisation]
+Evidence: Post Optimisation
 <img width="1025" height="498" alt="post-optimisation" src="https://github.com/user-attachments/assets/5a13ea36-6aa8-45bc-8b95-76fc79475530" />
 
 
@@ -211,8 +279,6 @@ Evidence: ![Post Optimisation]
 ---
 
 ## 9. Graph Data for Visualisation
-
-Use the following data in Excel / Google Sheets:
 
 ### CPU Usage (%)
 - Baseline: 2
