@@ -46,7 +46,8 @@ time ssh susanserver@192.168.56.103 "echo baselinetest"
 cat /proc/sys/vm/swappiness  
 sudo blockdev --getra /dev/sda 
 
-Evidence - Baseline CPU Memory
+**Evidence - Baseline CPU Memory**
+
 <img width="1265" height="917" alt="week6-baseline-cpu-mem" src="https://github.com/user-attachments/assets/8de96c0b-c95d-4c71-a11a-fb2bb1af40c0" />
 
 Evidence: Baseline Disk
@@ -88,7 +89,6 @@ sudo apt install stress -y
 Evidence: Stress Install
 <img width="891" height="765" alt="week6-stress-install" src="https://github.com/user-attachments/assets/dd95e9fc-b8d4-4809-88bc-713faf775d08" />
 
----
 
 ### CPU Load Test
 Command:
@@ -97,7 +97,6 @@ stress --cpu 4 --timeout 120
 Evidence: Stress Running
 <img width="959" height="689" alt="week6-stress-running" src="https://github.com/user-attachments/assets/72651ddc-4215-44ee-8346-53963a7b776d" />
 
----
 
 ### Load CPU, Memory & Disk
 Commands:
@@ -108,7 +107,6 @@ df -h /
 Evidence: Load CPU, MEM, DISK
 <img width="1891" height="1081" alt="week6-load-cpu-mem-disk" src="https://github.com/user-attachments/assets/9d707838-a9ee-4132-82bf-2e95eec0aab9" />
 
----
 
 ### Load Uptime & Top Processes
 Commands:
@@ -139,13 +137,11 @@ The following bottlenecks were identified during load testing:
 
 These findings justified optimisation testing.
 
----
 
 ## 6. Optimisation Testing
 
 Two system-level optimisations were implemented.
 
----
 
 ====================================================
 OPTIMISATION 1 – MEMORY OPTIMISATION (SWAPPINESS)
