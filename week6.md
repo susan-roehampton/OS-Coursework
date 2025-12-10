@@ -45,8 +45,7 @@ df -h /
 uptime  
 ps aux --sort=%cpu | head -10  
 
-Evidence:  
-** ![Baseline CPU Memory]
+Evidence - Baseline CPU Memory
 <img width="1265" height="917" alt="week6-baseline-cpu-mem" src="https://github.com/user-attachments/assets/8de96c0b-c95d-4c71-a11a-fb2bb1af40c0" />
 
 Evidence: ![Baseline Disk]
