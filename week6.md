@@ -45,15 +45,15 @@ df -h /
 uptime  
 ps aux --sort=%cpu | head -10  
 
-Evidence:  
+Evidence: 
 ![Baseline CPU Memory](week6-baseline-cpu-mem.png)
 <img width="1265" height="917" alt="week6-baseline-cpu-mem" src="https://github.com/user-attachments/assets/8de96c0b-c95d-4c71-a11a-fb2bb1af40c0" />
 
-Evidence:  
+Evidence:
 ![Baseline Disk](week6-baseline-disk-usage.png)
 <img width="1274" height="922" alt="week6-baseline-disk-usage" src="https://github.com/user-attachments/assets/d53c4372-aceb-4fb3-a536-9c5ac742d9e3" />
 
-Evidence:  
+Evidence:
 ![SSH Baseline](week6-ssh-latency-before.png)
 <img width="916" height="519" alt="week6-ssh-latency-before" src="https://github.com/user-attachments/assets/29ff9696-2f54-45a8-847e-96c6d4efa208" />
 
@@ -61,7 +61,7 @@ Evidence:
 ![Swappiness Before](week6-swappiness-before.png)
 <img width="1017" height="719" alt="week6-swappiness-before" src="https://github.com/user-attachments/assets/4f8552f2-bc54-4194-8ea0-54deed6253e1" />
 
-Evidence:  
+Evidence: 
 ![Disk Before](week6-disk-before.png)
 <img width="1018" height="902" alt="week6-disk-before" src="https://github.com/user-attachments/assets/e15fe116-512a-4155-9fe0-b2f726ff503a" />
 
@@ -166,6 +166,11 @@ sudo blockdev --getra /dev/sda
  Verification Output:
 4096  
 
+
+Evidence:  
+![Disk After](week6-disk-after.png)
+<img width="1285" height="802" alt="week6-disk-after" src="https://github.com/user-attachments/assets/461ad89c-ef38-4580-83f0-eebc57ad0bf4" />
+
 ---
 
 ###  Optimisation 2: Memory Optimisation (Swappiness)
@@ -175,6 +180,10 @@ Memory performance was improved by reducing swap preference:
 cat /proc/sys/vm/swappiness  
 
 Swappiness was reduced to allow better RAM utilisation and reduced disk swapping.
+
+Evidence:  
+![Swappiness After](week6-swappiness-after.png)
+<img width="1018" height="930" alt="week6-swappiness-after" src="https://github.com/user-attachments/assets/e6320070-3b22-43b1-a9cd-b9c33ec037a5" />
 
 ---
 
@@ -186,6 +195,11 @@ top -bn1 | head -5
 free -h  
 df -h /  
 sudo blockdev --getra /dev/sda  
+
+Evidence:
+![Post Optimisation](post-optimisation.png)
+<img width="1025" height="498" alt="post-optimisation" src="https://github.com/user-attachments/assets/5a13ea36-6aa8-45bc-8b95-76fc79475530" />
+
 
 ### Observed Improvements:
 - More stable CPU behaviour
