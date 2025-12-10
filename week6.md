@@ -238,7 +238,9 @@ Swap usage was reduced, improving memory performance and reducing disk dependenc
 ---
 
 ===============================================================
+
 OPTIMISATION 2 – DISK I/O OPTIMISATION (READ-AHEAD BUFFER)
+
 ===============================================================
 
 Purpose:
@@ -247,7 +249,9 @@ Increasing read-ahead improves disk throughput during sequential read operations
 ---
 
 ------------------------
+
 BEFORE OPTIMISATION
+
 ------------------------
 
 Command:
