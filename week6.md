@@ -171,7 +171,27 @@ These findings justified optimisation testing.
 
 ---
 
-## 6. Optimisation Testing
+## 6. Network Performance Analysis (Latency & Throughput)
+
+### Latency Testing (SSH)
+
+Network latency was measured using SSH response timing:
+```
+time ssh susanserver@192.168.56.103 "echo baselinetest"
+```
+
+**Evidence**
+<img width="916" height="519" alt="week6-ssh-latency-before" src="https://github.com/user-attachments/assets/62aedadf-03a1-4f8d-b142-5501e725c552" />
+
+Baseline latency was approximately **7.36 seconds**, which increased during CPU load and improved again after optimisation.
+
+---
+
+
+
+
+
+## 7. Optimisation Testing
 
 Two system-level optimisations were implemented.
 
@@ -310,7 +330,7 @@ Disk read performance improved by increasing read-ahead buffer size.
 
 ---
 
-## 7. Post-Optimisation Testing
+## 8. Post-Optimisation Testing
 
 Post-optimisation testing was performed using the same baseline commands.
 
@@ -335,7 +355,7 @@ sudo blockdev --getra /dev/sda
 
 ---
 
-## 8. Performance Comparison Table
+## 9. Performance Comparison Table
 
 | Metric | Baseline | Load Test | Optimised |
 |--------|----------|-----------|-----------|
@@ -348,7 +368,7 @@ sudo blockdev --getra /dev/sda
 
 ---
 
-## 9. Graph Data for Visualisation
+## 10. Graph Data for Visualisation
 
 ### CPU Usage (%)
 - Baseline: 2
@@ -374,7 +394,7 @@ sudo blockdev --getra /dev/sda
 ---
 
 
-## 10. Optimisation Impact Analysis
+## 11. Optimisation Impact Analysis
 
 | Optimisation | Impact |
 |-------------|--------|
@@ -385,7 +405,7 @@ Both optimisations produced measurable system performance improvements.
 
 ---
 
-## 11. Final Reflection
+## 12. Final Reflection
 
 This phase successfully demonstrated real-world Linux system performance evaluation. Through systematic baseline testing, controlled stress testing, bottleneck identification and targeted optimisation, measurable performance gains were achieved.
 
