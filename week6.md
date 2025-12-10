@@ -395,12 +395,24 @@ sudo blockdev --getra /dev/sda
 
 ### CPU Usage (%)
 
+| Test State | CPU Usage (%) |
+| ---------- | ------------- |
+| Baseline   | 2             |
+| Load Test  | 100           |
+| Optimised  | 50            |
+
 **Graph Design For CPU Ususage:**
 <img width="600" height="371" alt="week6-chart-cpu" src="https://github.com/user-attachments/assets/2d36113e-7a0b-4658-b6e4-804103db0b36" />
 
 ---
 
 ### Memory Usage (MB)
+
+| State     | Memory Used (MB)                        |
+| --------- | --------------------------------------- |
+| Baseline  | 445                                     |
+| Load      | 820                                     |
+| Optimised | 500                                     |
 
 **Graph Design For Memory Usuage**
 <img width="600" height="371" alt="week6-chart-memory" src="https://github.com/user-attachments/assets/5b8b986b-dfb1-4430-9813-dcb0d796970b" />
@@ -409,6 +421,12 @@ sudo blockdev --getra /dev/sda
 
 ### SSH Response Time (Seconds)
 
+| State     | SSH Response Time (s) |
+| --------- | --------------------- |
+| Baseline  | 7.36                  |
+| Load      | 11.2                  |
+| Optimised | 5.1                   |
+
 **Graph Design For SSH Response Time**
 <img width="600" height="371" alt="week6-chart-SSH-response time" src="https://github.com/user-attachments/assets/6a05b60d-75f5-4dcd-8959-02220254f836" />
 
@@ -416,11 +434,11 @@ sudo blockdev --getra /dev/sda
 
 ### Disk Read-Ahead
 
-Data:
+| State  | Read-Ahead Value |
+| ------ | ---------------- |
+| Before | 256              |
+| After  | 4096             |
 
-  State 	Read-Ahead Value
-- Before	256
-- After	4096
 **Graph Design For Disk Read-Ahead**
 <img width="600" height="371" alt="week6-chart-disk read ahead before and after optimisation" src="https://github.com/user-attachments/assets/655c64a7-cb5a-4c24-bcba-a0ded993d7bc" />
 
