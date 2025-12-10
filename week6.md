@@ -181,7 +181,9 @@ time ssh susanserver@192.168.56.103 "echo baselinetest"
 ```
 
 **Evidence**
+
 <img width="916" height="519" alt="week6-ssh-latency-before" src="https://github.com/user-attachments/assets/62aedadf-03a1-4f8d-b142-5501e725c552" />
+
 
 Baseline latency was approximately **7.36 seconds**, which increased during CPU load and improved again after optimisation.
 
@@ -207,7 +209,7 @@ network-throughput.png
 **NETWORK PERFORMANCE SUMMARY**
 
 |       Metric        |    Result     |
-|------------------ --|---------------|
+|---------------------|---------------|
 | Average Latency     | Stable        |
 | Packet Loss         | 0%            |
 | Network Throughput  | High & Stable |
