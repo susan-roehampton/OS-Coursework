@@ -42,7 +42,7 @@ Baseline testing was performed while the system was idle with no artificial work
 top -bn1 | head -5  
 free -h  
 df -h /
-time ssh susanserver@192.168.56.103 "echo baselinetest"
+time ssh susanserver@192.168.56.103 "echo baselinetest" 
 cat /proc/sys/vm/swappiness  
 sudo blockdev --getra /dev/sda 
 
@@ -53,19 +53,30 @@ sudo blockdev --getra /dev/sda
 
 ---
 
-Evidence: Baseline Disk
+**Evidence: Baseline Disk**
+
 <img width="1274" height="922" alt="week6-baseline-disk-usage" src="https://github.com/user-attachments/assets/d53c4372-aceb-4fb3-a536-9c5ac742d9e3" />
 
-Evidence: SSH Baseline
+---
+
+**Evidence: SSH Baseline**
+
 <img width="916" height="519" alt="week6-ssh-latency-before" src="https://github.com/user-attachments/assets/29ff9696-2f54-45a8-847e-96c6d4efa208" />
 
-Evidence: Swappiness Before
+---
+
+**Evidence: Swappiness Before**
+
 <img width="1017" height="719" alt="week6-swappiness-before" src="https://github.com/user-attachments/assets/4f8552f2-bc54-4194-8ea0-54deed6253e1" />
 
-Evidence: Disk Before
+---
+
+**Evidence: Disk Before**
+
 <img width="1018" height="902" alt="week6-disk-before" src="https://github.com/user-attachments/assets/e15fe116-512a-4155-9fe0-b2f726ff503a" />
 
 ---
+
 
 ### Baseline Results:
 - CPU Usage: ~0–3%
@@ -89,16 +100,22 @@ stress --cpu 4 --timeout 120
 Command:
 sudo apt install stress -y  
 
-Evidence: Stress Install
+**Evidence: Stress Install**
+
 <img width="891" height="765" alt="week6-stress-install" src="https://github.com/user-attachments/assets/dd95e9fc-b8d4-4809-88bc-713faf775d08" />
+
+---
 
 
 ### CPU Load Test
 Command:
 stress --cpu 4 --timeout 120  
 
-Evidence: Stress Running
+**Evidence: Stress Running**
+
 <img width="959" height="689" alt="week6-stress-running" src="https://github.com/user-attachments/assets/72651ddc-4215-44ee-8346-53963a7b776d" />
+
+---
 
 
 ### Load CPU, Memory & Disk
@@ -107,8 +124,11 @@ top -bn1 | head -5
 free -h  
 df -h /  
 
-Evidence: Load CPU, MEM, DISK
+**Evidence: Load CPU, MEM, DISK**
+
 <img width="1891" height="1081" alt="week6-load-cpu-mem-disk" src="https://github.com/user-attachments/assets/9d707838-a9ee-4132-82bf-2e95eec0aab9" />
+
+---
 
 
 ### Load Uptime & Top Processes
@@ -116,8 +136,11 @@ Commands:
 uptime  
 ps aux --sort=-%cpu | head -10  
 
-Evidence: Load Uptime, Top5
+**Evidence: Load Uptime, Top5**
+
 <img width="1860" height="1094" alt="week6-load-uptime-top5" src="https://github.com/user-attachments/assets/5371acac-ccf6-4863-89a8-d3d8e28d4670" />
+
+---
 
 
 ### Load Test Observations:
@@ -162,9 +185,12 @@ cat /proc/sys/vm/swappiness
 Output:
 60
 
-Evidence:
+**Evidence:**
+
 week6-swappiness-before.png
 <img width="1017" height="719" alt="week6-swappiness-before" src="https://github.com/user-attachments/assets/9299aafb-323b-43de-b66d-404102b2bba7" />
+
+---
 
 ------------------------
 APPLY OPTIMISATION
@@ -178,6 +204,8 @@ vm.swappiness=10
 Apply Change:
 sudo sysctl -p
 
+---
+
 ------------------------
 AFTER OPTIMISATION
 ------------------------
@@ -187,9 +215,12 @@ cat /proc/sys/vm/swappiness
 Output:
 10
 
-Evidence:
+**Evidence:**
+
 week6-swappiness-after.png
 <img width="1018" height="930" alt="week6-swappiness-after" src="https://github.com/user-attachments/assets/81f35091-c9c6-43b1-a6fb-63d46308c7f7" />
+
+---
 
 Result:
 Swap usage was reduced, improving memory performance and reducing disk dependency during load tests.
@@ -203,6 +234,8 @@ OPTIMISATION 2 – DISK I/O OPTIMISATION (READ-AHEAD BUFFER)
 Purpose:
 Increasing read-ahead improves disk throughput during sequential read operations.
 
+---
+
 ------------------------
 BEFORE OPTIMISATION
 ------------------------
@@ -212,7 +245,9 @@ sudo blockdev --getra /dev/sda
 Output:
 256
 
-Evidence:
+---
+
+**Evidence:**
 week6-disk-before.png
 <img width="1018" height="902" alt="week6-disk-before" src="https://github.com/user-attachments/assets/b4773480-30a5-46ec-b3ca-a65b1bc1fb76" />
 
