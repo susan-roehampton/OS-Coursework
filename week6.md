@@ -173,28 +173,21 @@ These findings justified optimisation testing.
 
 ## 6. Network Performance Analysis (Latency & Throughput)
 
-### Latency Testing (SSH)
-
-Network latency was measured using SSH response timing:
-```
-time ssh susanserver@192.168.56.103 "echo baselinetest"
-```
+### Latency Measurement (Ping)
 
 **Evidence**
 
-<img width="916" height="519" alt="week6-ssh-latency-before" src="https://github.com/user-attachments/assets/62aedadf-03a1-4f8d-b142-5501e725c552" />
-
-
-Baseline latency was approximately **7.36 seconds**, which increased during CPU load and improved again after optimisation.
+week6-network-ping.png
+<img width="1250" height="792" alt="week6-network-ping" src="https://github.com/user-attachments/assets/4f0946e9-e77e-4063-ab83-e8fd16f8c2ff" />
 
 ---
 
 ## Throughput Testing (iperf3)
-Server Side (Ubuntu):
-iperf3 -s
 
-Client Side (Windows):
-iperf3 -c 192.168.56.103
+```
+commands used:
+scp -P 2222 susanserver@127.0.0.1:/home/susanserver/testfile.bin .
+```
 
 Observation:
 - High and stable throughput observed
@@ -202,7 +195,9 @@ Observation:
 - Confirms healthy internal VM networking
 
 **Evidence**
+
 network-throughput.png
+<img width="1852" height="1080" alt="week6-throughput-ping" src="https://github.com/user-attachments/assets/17f798c8-3718-4b7b-8ff7-7562ef6db4e6" />
 
 ---
 
