@@ -95,12 +95,14 @@ This represents stable system behaviour under normal conditions.
 Load testing was performed using CPU stress simulation.
 
 ### Command Used:
+```
 stress --cpu 4 --timeout 120
-
+```
 ### Stress Tool Installation
 Command:
+```
 sudo apt install stress -y  
-
+```
 **Evidence: Stress Install**
 
 <img width="891" height="765" alt="week6-stress-install" src="https://github.com/user-attachments/assets/dd95e9fc-b8d4-4809-88bc-713faf775d08" />
@@ -110,8 +112,9 @@ sudo apt install stress -y
 
 ### CPU Load Test
 Command:
+```
 stress --cpu 4 --timeout 120  
-
+```
 **Evidence: Stress Running**
 
 <img width="959" height="689" alt="week6-stress-running" src="https://github.com/user-attachments/assets/72651ddc-4215-44ee-8346-53963a7b776d" />
@@ -121,10 +124,11 @@ stress --cpu 4 --timeout 120
 
 ### Load CPU, Memory & Disk
 Commands:
+```
 top -bn1 | head -5  
 free -h  
 df -h /  
-
+```
 **Evidence: Load CPU, MEM, DISK**
 
 <img width="1891" height="1081" alt="week6-load-cpu-mem-disk" src="https://github.com/user-attachments/assets/9d707838-a9ee-4132-82bf-2e95eec0aab9" />
@@ -134,9 +138,10 @@ df -h /
 
 ### Load Uptime & Top Processes
 Commands:
+```
 uptime  
 ps aux --sort=-%cpu | head -10  
-
+```
 **Evidence: Load Uptime, Top5**
 
 <img width="1860" height="1094" alt="week6-load-uptime-top5" src="https://github.com/user-attachments/assets/5371acac-ccf6-4863-89a8-d3d8e28d4670" />
@@ -181,8 +186,9 @@ Reducing swappiness decreases dependency on swap memory and prioritises RAM, imp
 BEFORE OPTIMISATION
 ------------------------
 Command:
+```
 cat /proc/sys/vm/swappiness
-
+```
 Output:
 60
 
@@ -197,8 +203,9 @@ week6-swappiness-before.png
 APPLY OPTIMISATION
 ------------------------
 Command:
+```
 sudo nano /etc/sysctl.conf
-
+```
 Added Line:
 vm.swappiness=10
 
@@ -211,8 +218,9 @@ sudo sysctl -p
 AFTER OPTIMISATION
 ------------------------
 Command:
+```
 cat /proc/sys/vm/swappiness
-
+```
 Output:
 10
 
@@ -241,8 +249,9 @@ Increasing read-ahead improves disk throughput during sequential read operations
 BEFORE OPTIMISATION
 ------------------------
 Command:
+```
 sudo blockdev --getra /dev/sda
-
+```
 Output:
 256
 
@@ -256,8 +265,9 @@ week6-disk-before.png
 APPLY OPTIMISATION
 ------------------------
 Command:
+```
 sudo blockdev --setra 4096 /dev/sda
-
+```
 Remount Filesystem:
 sudo mount -o remount /
 
@@ -265,14 +275,17 @@ sudo mount -o remount /
 AFTER OPTIMISATION
 ------------------------
 Command:
+```
 sudo blockdev --getra /dev/sda
-
+```
 Output:
 4096
 
-Evidence:
+**Evidence:**
 week6-disk-after.png
 <img width="1285" height="802" alt="week6-disk-after" src="https://github.com/user-attachments/assets/1ecf66cc-027f-4483-82fb-63656d155b2d" />
+
+---
 
 Result:
 Disk read performance improved by increasing read-ahead buffer size.
@@ -283,13 +296,16 @@ Disk read performance improved by increasing read-ahead buffer size.
 
 Post-optimisation testing was performed using the same baseline commands.
 
+```
 top -bn1 | head -5  
 free -h  
 df -h /  
 sudo blockdev --getra /dev/sda  
-
-Evidence: Post Optimisation
+```
+**Evidence: Post Optimisation**
 <img width="1025" height="498" alt="post-optimisation" src="https://github.com/user-attachments/assets/5a13ea36-6aa8-45bc-8b95-76fc79475530" />
+
+---
 
 
 ### Observed Improvements:
