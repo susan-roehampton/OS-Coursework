@@ -187,8 +187,34 @@ Baseline latency was approximately **7.36 seconds**, which increased during CPU 
 
 ---
 
+## Throughput Testing (iperf3)
+Server Side (Ubuntu):
+iperf3 -s
+
+Client Side (Windows):
+iperf3 -c 192.168.56.103
+
+Observation:
+- High and stable throughput observed
+- No packet loss during transfer
+- Confirms healthy internal VM networking
+
+**Evidence**
+network-throughput.png
+
+---
+
+**NETWORK PERFORMANCE SUMMARY**
+
+|       Metric        |    Result     |
+|------------------ --|---------------|
+| Average Latency     | Stable        |
+| Packet Loss         | 0%            |
+| Network Throughput  | High & Stable |
+| Internal VM Network | Healthy       |
 
 
+---
 
 
 ## 7. Optimisation Testing
@@ -357,14 +383,14 @@ sudo blockdev --getra /dev/sda
 
 ## 9. Performance Comparison Table
 
-| Metric | Baseline | Load Test | Optimised |
-|--------|----------|-----------|-----------|
-| CPU Usage | 2% | 100% | 40–60% |
-| Memory Used | 445MB | 820MB | 500MB |
-| Disk Usage | 14% | 14% | 14% |
-| Load Average | 0.02 | 2.10 | 0.60 |
-| Disk Read-Ahead | 256 | 256 | 4096 |
-| SSH Response Time | 7.36s | 11.2s | 5.1s |
+|       Metric      | Baseline | Load Test | Optimised |
+|-------------------|----------|-----------|-----------|
+| CPU Usage         | 2%       | 100%      | 40–60%    |
+| Memory Used       | 445MB    | 820MB     | 500MB     |
+| Disk Usage        | 14%      | 14%       | 14%       |
+| Load Average      | 0.02     | 2.10      | 0.60      |
+| Disk Read-Ahead   | 256      | 256       | 4096      |
+| SSH Response Time | 7.36s    | 11.2s     | 5.1s      |
 
 ---
 
@@ -395,10 +421,10 @@ sudo blockdev --getra /dev/sda
 
 
 ## 11. Optimisation Impact Analysis
-
-| Optimisation | Impact |
-|-------------|--------|
-| Disk Read-Ahead Increase | Faster file access & reduced I/O delay |
+    
+|           Optimisation      |                 Impact                  |
+|-----------------------------|-----------------------------------------|
+| Disk Read-Ahead Increase    | Faster file access & reduced I/O delay  |
 | Memory Swappiness Reduction | Improved RAM usage and reduced swapping |
 
 Both optimisations produced measurable system performance improvements.
