@@ -45,24 +45,19 @@ df -h /
 uptime  
 ps aux --sort=%cpu | head -10  
 
-Evidence: 
-![Baseline CPU Memory]
+Evidence: ![Baseline CPU Memory]
 <img width="1265" height="917" alt="week6-baseline-cpu-mem" src="https://github.com/user-attachments/assets/8de96c0b-c95d-4c71-a11a-fb2bb1af40c0" />
 
-Evidence:
-![Baseline Disk]
+Evidence: ![Baseline Disk]
 <img width="1274" height="922" alt="week6-baseline-disk-usage" src="https://github.com/user-attachments/assets/d53c4372-aceb-4fb3-a536-9c5ac742d9e3" />
 
-Evidence:
-![SSH Baseline]
+Evidence: ![SSH Baseline]
 <img width="916" height="519" alt="week6-ssh-latency-before" src="https://github.com/user-attachments/assets/29ff9696-2f54-45a8-847e-96c6d4efa208" />
 
-Evidence:  
-![Swappiness Before]
+Evidence: ![Swappiness Before]
 <img width="1017" height="719" alt="week6-swappiness-before" src="https://github.com/user-attachments/assets/4f8552f2-bc54-4194-8ea0-54deed6253e1" />
 
-Evidence: 
-![Disk Before]
+Evidence: ![Disk Before]
 <img width="1018" height="902" alt="week6-disk-before" src="https://github.com/user-attachments/assets/e15fe116-512a-4155-9fe0-b2f726ff503a" />
 
 ---
@@ -89,8 +84,7 @@ stress --cpu 4 --timeout 120
 Command:
 sudo apt install stress -y  
 
-Evidence:  
-![Stress Install](week6-stress-install.png)
+Evidence: ![Stress Install]
 <img width="891" height="765" alt="week6-stress-install" src="https://github.com/user-attachments/assets/dd95e9fc-b8d4-4809-88bc-713faf775d08" />
 
 ---
@@ -99,8 +93,7 @@ Evidence:
 Command:
 stress --cpu 4 --timeout 120  
 
-Evidence:  
-![Stress Running](week6-stress-running.png)
+Evidence: ![Stress Running])
 <img width="959" height="689" alt="week6-stress-running" src="https://github.com/user-attachments/assets/72651ddc-4215-44ee-8346-53963a7b776d" />
 
 ---
@@ -111,8 +104,7 @@ top -bn1 | head -5
 free -h  
 df -h /  
 
-Evidence:  
-![Load CPU MEM DISK](week6-load-cpu-mem-disk.png)
+Evidence: ![Load CPU MEM DISK]
 <img width="1891" height="1081" alt="week6-load-cpu-mem-disk" src="https://github.com/user-attachments/assets/9d707838-a9ee-4132-82bf-2e95eec0aab9" />
 
 ---
@@ -122,8 +114,7 @@ Commands:
 uptime  
 ps aux --sort=-%cpu | head -10  
 
-Evidence:  
-![Load Uptime Top5](week6-load-uptime-top5.png)
+Evidence: ![Load Uptime Top5]
 <img width="1860" height="1094" alt="week6-load-uptime-top5" src="https://github.com/user-attachments/assets/5371acac-ccf6-4863-89a8-d3d8e28d4670" />
 
 
@@ -167,8 +158,7 @@ sudo blockdev --getra /dev/sda
 4096  
 
 
-Evidence:  
-![Disk After](week6-disk-after.png)
+Evidence: ![Disk After]
 <img width="1285" height="802" alt="week6-disk-after" src="https://github.com/user-attachments/assets/461ad89c-ef38-4580-83f0-eebc57ad0bf4" />
 
 ---
@@ -181,8 +171,7 @@ cat /proc/sys/vm/swappiness
 
 Swappiness was reduced to allow better RAM utilisation and reduced disk swapping.
 
-Evidence:  
-![Swappiness After](week6-swappiness-after.png)
+Evidence: ![Swappiness After]
 <img width="1018" height="930" alt="week6-swappiness-after" src="https://github.com/user-attachments/assets/e6320070-3b22-43b1-a9cd-b9c33ec037a5" />
 
 ---
@@ -196,8 +185,7 @@ free -h
 df -h /  
 sudo blockdev --getra /dev/sda  
 
-Evidence:
-![Post Optimisation](post-optimisation.png)
+Evidence: ![Post Optimisation]
 <img width="1025" height="498" alt="post-optimisation" src="https://github.com/user-attachments/assets/5a13ea36-6aa8-45bc-8b95-76fc79475530" />
 
 
