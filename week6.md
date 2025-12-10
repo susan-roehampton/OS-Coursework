@@ -355,7 +355,7 @@ sudo blockdev --getra /dev/sda
 ---
 
 
-## 11. Optimisation Impact Analysis
+## 10. Optimisation Impact Analysis
 
 | Optimisation | Impact |
 |-------------|--------|
@@ -366,7 +366,7 @@ Both optimisations produced measurable system performance improvements.
 
 ---
 
-## 12. Final Reflection
+## 11. Final Reflection
 
 This phase successfully demonstrated real-world Linux system performance evaluation. Through systematic baseline testing, controlled stress testing, bottleneck identification and targeted optimisation, measurable performance gains were achieved.
 
