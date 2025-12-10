@@ -169,6 +169,7 @@ The following bottlenecks were identified during load testing:
 
 These findings justified optimisation testing.
 
+---
 
 ## 6. Optimisation Testing
 
@@ -258,6 +259,7 @@ Output:
 ---
 
 **Evidence:**
+
 week6-disk-before.png
 <img width="1018" height="902" alt="week6-disk-before" src="https://github.com/user-attachments/assets/b4773480-30a5-46ec-b3ca-a65b1bc1fb76" />
 
@@ -282,6 +284,7 @@ Output:
 4096
 
 **Evidence:**
+
 week6-disk-after.png
 <img width="1285" height="802" alt="week6-disk-after" src="https://github.com/user-attachments/assets/1ecf66cc-027f-4483-82fb-63656d155b2d" />
 
@@ -303,6 +306,7 @@ df -h /
 sudo blockdev --getra /dev/sda  
 ```
 **Evidence: Post Optimisation**
+
 <img width="1025" height="498" alt="post-optimisation" src="https://github.com/user-attachments/assets/5a13ea36-6aa8-45bc-8b95-76fc79475530" />
 
 ---
