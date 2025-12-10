@@ -416,6 +416,11 @@ sudo blockdev --getra /dev/sda
 
 ### Disk Read-Ahead
 
+Data:
+
+  State 	Read-Ahead Value
+- Before	256
+- After	4096
 **Graph Design For Disk Read-Ahead**
 <img width="600" height="371" alt="week6-chart-disk read ahead before and after optimisation" src="https://github.com/user-attachments/assets/655c64a7-cb5a-4c24-bcba-a0ded993d7bc" />
 
