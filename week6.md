@@ -104,7 +104,7 @@ top -bn1 | head -5
 free -h  
 df -h /  
 
-Evidence: Load CPU MEM DISK
+Evidence: Load CPU, MEM, DISK
 <img width="1891" height="1081" alt="week6-load-cpu-mem-disk" src="https://github.com/user-attachments/assets/9d707838-a9ee-4132-82bf-2e95eec0aab9" />
 
 ---
@@ -114,7 +114,7 @@ Commands:
 uptime  
 ps aux --sort=-%cpu | head -10  
 
-Evidence: Load Uptime Top5
+Evidence: Load Uptime, Top5
 <img width="1860" height="1094" alt="week6-load-uptime-top5" src="https://github.com/user-attachments/assets/5371acac-ccf6-4863-89a8-d3d8e28d4670" />
 
 
