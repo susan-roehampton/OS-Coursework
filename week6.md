@@ -46,9 +46,12 @@ time ssh susanserver@192.168.56.103 "echo baselinetest"
 cat /proc/sys/vm/swappiness  
 sudo blockdev --getra /dev/sda 
 
+
 **Evidence - Baseline CPU Memory**
 
 <img width="1265" height="917" alt="week6-baseline-cpu-mem" src="https://github.com/user-attachments/assets/8de96c0b-c95d-4c71-a11a-fb2bb1af40c0" />
+
+---
 
 Evidence: Baseline Disk
 <img width="1274" height="922" alt="week6-baseline-disk-usage" src="https://github.com/user-attachments/assets/d53c4372-aceb-4fb3-a536-9c5ac742d9e3" />
