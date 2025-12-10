@@ -354,20 +354,6 @@ sudo blockdev --getra /dev/sda
 
 ---
 
-## 10. Network Performance Analysis
-
-SSH latency was measured using:
-
-time ssh susanserver@192.168.56.103 echo "test"  
-
-### Results:
-- Baseline latency was stable
-- Load testing increased latency
-- Post-optimisation reduced latency below baseline
-
-This confirms successful network-related performance improvement.
-
----
 
 ## 11. Optimisation Impact Analysis
 
