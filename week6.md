@@ -39,13 +39,14 @@ The following performance metrics were measured:
 Baseline testing was performed while the system was idle with no artificial workload.
 
 ### Commands Used:
+```
 top -bn1 | head -5  
 free -h  
 df -h /
 time ssh susanserver@192.168.56.103 "echo baselinetest" 
 cat /proc/sys/vm/swappiness  
 sudo blockdev --getra /dev/sda 
-
+```
 
 **Evidence - Baseline CPU Memory**
 
