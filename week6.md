@@ -177,14 +177,18 @@ Two system-level optimisations were implemented.
 
 
 ====================================================
+
 OPTIMISATION 1 – MEMORY OPTIMISATION (SWAPPINESS)
+
 ====================================================
 
 Purpose:
 Reducing swappiness decreases dependency on swap memory and prioritises RAM, improving responsiveness during load.
 
 ------------------------
+
 BEFORE OPTIMISATION
+
 ------------------------
 Command:
 ```
@@ -216,7 +220,9 @@ sudo sysctl -p
 ---
 
 ------------------------
+
 AFTER OPTIMISATION
+
 ------------------------
 Command:
 ```
@@ -269,7 +275,9 @@ week6-disk-before.png
 <img width="1018" height="902" alt="week6-disk-before" src="https://github.com/user-attachments/assets/b4773480-30a5-46ec-b3ca-a65b1bc1fb76" />
 
 ------------------------
+
 APPLY OPTIMISATION
+
 ------------------------
 Command:
 ```
@@ -279,7 +287,9 @@ Remount Filesystem:
 sudo mount -o remount /
 
 ------------------------
+
 AFTER OPTIMISATION
+
 ------------------------
 Command:
 ```
