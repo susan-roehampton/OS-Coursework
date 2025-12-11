@@ -238,3 +238,84 @@ No unnecessary services (HTTP, FTP, SMB, database servers, etc.) are running —
 The Nmap scan confirms that the server's network footprint is minimal and secure.
 Only a single managed service (SSH) is exposed, and its version is up to date.
 This aligns with best practices for system hardening.
+
+---
+---
+
+## Task 3: SSH Security Verification
+
+This section documents the verification of SSH configuration, service state, and version to ensure the server is securely configured and functioning correctly.
+
+### 1. SSH Configuration Review
+
+The SSH configuration file was inspected using:
+
+```
+sudo nano /etc/ssh/sshd_config
+```
+
+Key settings observed in the configuration:
+
+- PermitRootLogin no
+- PasswordAuthentication yes (required for coursework testing)
+- X11Forwarding no
+- Subsystem sftp /usr/lib/openssh/sftp-server
+
+These settings confirm that root login is disabled, unnecessary forwarding features are turned off, and only required components are active.
+
+---
+
+### 2. SSH Service Status Check
+
+The status of the SSH service was verified with:
+
+```
+sudo systemctl status ssh
+```
+
+**Verified Findings:**
+
+- Service state: active (running)
+- Startup state: enabled (starts automatically on boot)
+- Listening on port 22
+- No failures or repeated restarts reported
+
+This confirms that the SSH server is stable and functioning properly.
+
+---
+
+### SSH Version Verification
+
+The SSH client/server version was checked using:
+
+```
+ssh -V
+```
+
+**Result:**
+
+- OpenSSH_9.6p1 Ubuntu 3ubuntu13.14
+- OpenSSL 3.0.13
+
+This confirms the system is running an up-to-date and secure version of OpenSSH.
+
+---
+
+**Evidence**
+
+<img width="1289" height="798" alt="week7-ssh-verification" src="https://github.com/user-attachments/assets/734a46d8-325a-4fbb-8edc-ad61ca057909" />
+
+---
+
+### Summary of SSH Security State
+
+Based on configuration, service status, and version inspection:
+
+- SSH is correctly installed and running.
+- Root login is disabled.
+- Essential security defaults are enforced.
+- No insecure or deprecated SSH options were found.
+- The service is updated and maintained.
+
+This verifies that SSH on the server meets the requirements for Week 7's security audit.
+
