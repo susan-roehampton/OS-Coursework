@@ -459,4 +459,112 @@ The audit confirms that essential networking, logging, SSH, and update services 
 Optional services are present but do not pose a security risk and can be disabled to further reduce surface area.  
 Overall, the system is secure, stable, and operating as expected.
 
+---
+
+
+## [Task 6 — System Configuration Review & Remaining Risk Assessment]
+
+This task evaluates the system’s overall security posture by reviewing SSH settings, firewall rules, update configuration, user privileges, and running services.
+
+---
+
+## 1. SSH Configuration Review
+
+Commands checked:
+```bash
+sudo nano /etc/ssh/sshd_config
+sudo systemctl status ssh
+ssh -V
+```
+
+### Findings
+- SSH service is active and running normally.  
+- OpenSSH 9.6p1 is installed and up to date.  
+- Password authentication is currently enabled, which is acceptable for coursework but not ideal for production systems.  
+- No unusual login activity was observed.  
+
+---
+
+## 2. Firewall & Network Security
+
+Firewall configuration:
+```bash
+sudo ufw enable
+sudo ufw allow OpenSSH
+```
+
+### Findings
+- The firewall is enabled.  
+- SSH (port 22) is the only allowed service.  
+- No unnecessary ports are exposed.  
+
+---
+
+## 3. Automatic Security Updates
+
+Automatic updates through unattended-upgrades were enabled to ensure important security patches install without manual intervention.
+
+---
+
+## 4. User & Permission Review
+
+Commands used:
+```bash
+id
+grep -E "sudo|adm" /etc/group
+ls -l /home
+sudo -l
+```
+
+### Findings
+- Active users include **susansserver** and **studentadmin**.  
+- Only authorised users have sudo privileges.  
+- Home directories are correctly assigned and restricted.  
+- No unauthorised privilege escalation risks were identified.  
+
+---
+
+## 5. Service Baseline Review
+
+Service summary based on the audit:
+- 23 active services  
+- 0 failed services  
+- Essential components such as SSH, journald, systemd-networkd, and logind are functioning properly  
+- A few optional services (ModemManager, multipathd, udisks2, upower, iperf3) are running but not harmful; they may be disabled to further reduce attack surface  
+
+---
+
+## 6. Remaining Risk Assessment
+
+| Risk Area | Description | Severity |
+|----------|-------------|----------|
+| Password Authentication | SSH still uses password-based login | Medium |
+| Lack of Rate Limiting | SSH is not protected against brute-force attempts | Medium |
+| Optional Services Running | Additional services increase potential exposure | Low |
+| Sudo Defaults | Default timeout may leave elevated sessions open longer than intended | Low |
+
+### Recommended Mitigations
+- Disable password authentication and switch to key-based login.  
+- Enable SSH rate limiting using `sudo ufw limit 22`.  
+- Disable unnecessary optional services.  
+- Adjust the sudo timeout value for stricter access control.  
+
+---
+
+## 7. Conclusion
+
+The system is secure and stable for a controlled lab environment. SSH, firewall rules, automatic updates, permissions, and essential services are configured correctly. Remaining risks are manageable and can be reduced with small adjustments. This completes the system configuration review for Week 7.
+
+---
+
+##  Reflection – Week 7
+
+This week required the deepest level of investigation so far, and it gave me a clearer sense of how comprehensive system security assessments are performed in real environments. Working through the different auditing stages showed me how each tool contributes a different perspective on the system’s security posture.
+
+Running the initial Lynis audit revealed how many small configuration gaps can exist even on a fresh installation. Applying the recommended fixes and then reviewing the improved score helped me understand the value of iterative hardening rather than relying on single changes. Conducting the Nmap scan from the host machine also demonstrated how external systems identify exposed services, which reinforced the importance of having strict firewall policies and minimal service exposure.
+
+The SSH verification tasks improved my confidence in reviewing authentication settings, checking which components are running, and confirming that secure defaults are applied. The access control review and service audit pushed me to think about why each service exists and whether it genuinely needs to be active, rather than simply accepting the system’s defaults.
+
+Overall, this week strengthened my understanding of secure system administration. I now have a more practical sense of how to identify weak points, prioritise remediation steps, and document findings in a structured and professional way.
+
 
