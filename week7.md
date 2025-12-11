@@ -179,3 +179,40 @@ The security posture of the server improved, demonstrated by the updated hardeni
 
 ---
 
+
+
+## Task 2:  Network Security Assessment (Nmap Scan)
+
+A full port and service scan was performed using Nmap from the host machine to assess exposed network services on the Ubuntu server.
+
+Command used:
+```
+nmap -sV -Pn 192.168.56.103
+```
+
+**Purpose:**
+
+- Identify open ports
+- Detect service versions
+- Check for unnecessary or vulnerable network services
+
+## Nmap Scan Results
+
+Only 1 open port detected:
+ - Port 22/tcp — OpenSSH 9.6p1 (Ubuntu)
+
+All other 999 ports are filtered, indicating the firewall is actively restricting access.
+
+The host responded instantly (0.00s latency), meaning the system is reachable and stable.
+
+## Interpretation
+
+The system exposes only SSH, which is expected for remote administration.
+The firewall (UFW) is configured correctly, reducing the attack surface significantly.
+No unnecessary services (HTTP, FTP, SMB, database servers, etc.) are running — this is ideal for a hardened system.
+
+##  Security Assessment Conclusion
+
+The Nmap scan confirms that the server's network footprint is minimal and secure.
+Only a single managed service (SSH) is exposed, and its version is up to date.
+This aligns with best practices for system hardening.
