@@ -1,6 +1,6 @@
 # Week 7 – Security Audit and System Evaluation  
 
-## Task 1: Lynis Security Audit (Before & After Remediation)
+## [Task 1: Lynis Security Audit (Before & After Remediation)]
 
 ### 1. Introduction
 This phase focuses on evaluating the security posture of the Ubuntu server using **Lynis**, a recognised auditing tool for UNIX-based systems. Lynis performs an extensive assessment of system configuration, hardening, services, authentication mechanisms, and known security gaps. The objective of this task was to run a baseline audit, apply recommended security improvements, and then perform a second audit to measure improvement.
@@ -178,9 +178,9 @@ This task successfully completed the full Lynis auditing cycle:
 The security posture of the server improved, demonstrated by the updated hardening index and corrected vulnerabilities. The system now aligns more closely with recognised security best practices.
 
 ---
----
 
-## Task 2:  Network Security Assessment 
+
+## [Task 2:  Network Security Assessment]
 
 ## Installing Nmap (Host Machine)
 
@@ -240,9 +240,9 @@ Only a single managed service (SSH) is exposed, and its version is up to date.
 This aligns with best practices for system hardening.
 
 ---
----
 
-## Task 3: SSH Security Verification
+
+## [Task 3: SSH Security Verification]
 
 This section documents the verification of SSH configuration, service state, and version to ensure the server is securely configured and functioning correctly.
 
@@ -320,9 +320,9 @@ Based on configuration, service status, and version inspection:
 This verifies that SSH on the server meets the requirements for Week 7's security audit.
 
 ---
----
 
-## Task 4: Access Control Verification
+
+## [Task 4: Access Control Verification]
 
 This section confirms that only authorised users have system access and that administrative permissions are correctly assigned.
 
@@ -384,7 +384,7 @@ System access controls are configured securely and meet required standards.
 
 ---
 
-## Task 5 — Service Audit (Running Services & Justification)
+## [Task 5 — Service Audit (Running Services & Justification)]
 
 A service audit was conducted to identify active services and determine whether they are required for system operation and security.
 
