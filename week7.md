@@ -178,10 +178,26 @@ This task successfully completed the full Lynis auditing cycle:
 The security posture of the server improved, demonstrated by the updated hardening index and corrected vulnerabilities. The system now aligns more closely with recognised security best practices.
 
 ---
+---
 
+## Task 2:  Network Security Assessment 
 
+## Installing Nmap (Host Machine)
 
-## Task 2:  Network Security Assessment (Nmap Scan)
+Nmap was installed on the Windows host system using the following command:
+```
+winget install nmap
+```
+
+This successfully downloaded and installed the Nmap package required for external network scanning.
+
+**Evidence**
+
+<img width="1526" height="910" alt="week7-nmap-install" src="https://github.com/user-attachments/assets/eac777b8-c620-4c4e-92a7-b18a2475c497" />
+
+---
+
+## Nmap Scan
 
 A full port and service scan was performed using Nmap from the host machine to assess exposed network services on the Ubuntu server.
 
@@ -204,6 +220,12 @@ Only 1 open port detected:
 All other 999 ports are filtered, indicating the firewall is actively restricting access.
 
 The host responded instantly (0.00s latency), meaning the system is reachable and stable.
+
+**Evidence**
+
+<img width="1529" height="916" alt="week7--nmap-scan" src="https://github.com/user-attachments/assets/3066aa55-b935-4873-92d3-451e90810ae4" />
+
+---
 
 ## Interpretation
 
