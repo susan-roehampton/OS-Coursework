@@ -31,6 +31,13 @@ The initial system audit was performed:
 sudo lynis audit system
 ```
 
+
+**Evidence**
+
+<img width="1278" height="802" alt="week7-lynis-before" src="https://github.com/user-attachments/assets/0e320bae-281d-442a-b34c-b0ae89e3d865" />
+
+---
+
 ### Baseline Hardening Index
 - **Hardening Index:** 60  
 - **Tests Performed:** 256  
@@ -65,6 +72,10 @@ sudo ufw enable
 sudo ufw allow OpenSSH
 ```
 
+**Evidence**
+
+<img width="1281" height="809" alt="wee7-ufw" src="https://github.com/user-attachments/assets/434b5961-2e8c-48d9-82ce-9f67acde4243" />
+
 ---
 
 ### 4.2 Installing Malware Scanner
@@ -73,6 +84,11 @@ sudo ufw allow OpenSSH
 sudo apt install rkhunter -y
 sudo rkhunter --update
 ```
+
+**Evidence**
+
+<img width="1291" height="809" alt="week7-rkhunter-install" src="https://github.com/user-attachments/assets/f599d07e-dd21-421c-943e-b04f4a57e948" />
+
 
 This addressed the previously missing malware detection capability.
 
@@ -83,11 +99,15 @@ This addressed the previously missing malware detection capability.
 The system prompted configuration of unattended upgrades.  
 **“Yes”** was selected to automatically apply important updates, reducing long-term exposure to vulnerabilities.
 
+**Evidence**
+
+<img width="1279" height="800" alt="week7-auto-updates" src="https://github.com/user-attachments/assets/1e155e48-f6f1-4749-9edb-ef38731c343c" />
+
 ---
 
 ### 4.4 SSH Hardening
 
-The SSH configuration file (`/etc/ssh/sshd_config`) was reviewed and adjusted according to Lynis suggestions, including:
+The SSH configuration file (/etc/ssh/sshd_config) was reviewed and adjusted according to Lynis suggestions, including:
 
 - Reviewing authentication options  
 - Ensuring unnecessary features remained disabled  
@@ -99,6 +119,10 @@ SSH was restarted to apply changes:
 sudo systemctl restart ssh
 ```
 
+**Evidence**
+
+<img width="1285" height="807" alt="week7-ssh-hardening" src="https://github.com/user-attachments/assets/abf1bb2d-c109-462f-b23b-fba5a1cf69d7" />
+
 ---
 
 ## 5. Lynis Second Audit (After Remediation)
@@ -108,6 +132,12 @@ A follow-up audit was performed after system hardening:
 ```bash
 sudo lynis audit system
 ```
+
+**Evidence**
+
+<img width="1287" height="810" alt="week7-lynis-after" src="https://github.com/user-attachments/assets/a4ccc3ef-7efc-4d71-91e2-86da98d9574a" />
+
+---
 
 ### Updated Hardening Index
 - **Hardening Index:** 61  
