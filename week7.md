@@ -383,8 +383,80 @@ System access controls are configured securely and meet required standards.
 <img width="1288" height="800" alt="week7-access-control" src="https://github.com/user-attachments/assets/27d2efa9-b7ae-4cd9-8240-84504c2a5156" />
 
 ---
+
+## Task 5 — Service Audit (Running Services & Justification)
+
+A service audit was conducted to identify active services and determine whether they are required for system operation and security.
+
+Commands used:
+```bash
+systemctl list-units --type=service --state=running
+systemctl --failed
+```
+
+**Evidence**
+
+<img width="1280" height="807" alt="week7-service-audit" src="https://github.com/user-attachments/assets/e58b0b5f-ec99-41f9-aa91-293c3f74ef33" />
+
 ---
 
-## Task 5:
+## 1. Summary of Findings
+A total of **23 active services** were detected. Most are core components needed for Ubuntu to operate normally, while a few optional services are present but not harmful.
+
+---
+
+## 2. Analysis of Running Services
+
+### 2.1 Essential System Services
+- **cron.service** — Handles scheduled jobs.
+- **systemd-journald.service** — Collects system logs.
+- **rsyslog.service** — Additional logging service.
+- **systemd-logind.service** — User session management.
+- **systemd-udevd.service** — Hardware device handling.
+- **user@1000.service** — User session manager.
+
+### 2.2 Networking & Communication
+- systemd-resolved.service
+- dbus.service
+- getty@tty1.service
+
+
+### 2.3 Security & Update Services
+- **ssh.service** — Secure remote login.
+- **fail2ban.service** — Protects against brute-force attempts.
+- **unattended-upgrades.service** — Automatic security updates.
+- **fwupd.service** — Firmware update support.
+
+
+### 2.4 User & System Functionality
+- **polkit.service** — Authorization control.
+- **systemd-timesyncd.service** — Time synchronization.
+- **systemd-journald.service** — System event logging.
+
+### 2.5 Optional / Non-Essential Services
+- **ModemManager.service** — Not required in a VM.
+- **multipathd.service** — Not needed (no multipath storage).
+- **udisks2.service** — Desktop-oriented; optional.
+- **upower.service** — Laptop power management; unnecessary here.
+- **iperf3.service** — Only needed for testing (can be disabled afterward).
+
+---
+
+## 3. Failed Services Check
+```bash
+systemctl --failed
+```
+Result: 0 loaded units listed. (No services are failing)
+
+**Evidence**
+
+<img width="1287" height="808" alt="week7-service-failed" src="https://github.com/user-attachments/assets/c27bfb6f-2d4a-4c77-b02a-8f7fabded74b" />
+
+---
+
+## 4. Conclusion
+The audit confirms that essential networking, logging, SSH, and update services are running correctly.  
+Optional services are present but do not pose a security risk and can be disabled to further reduce surface area.  
+Overall, the system is secure, stable, and operating as expected.
 
 
