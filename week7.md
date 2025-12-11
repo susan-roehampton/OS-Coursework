@@ -319,3 +319,72 @@ Based on configuration, service status, and version inspection:
 
 This verifies that SSH on the server meets the requirements for Week 7's security audit.
 
+---
+---
+
+## Task 4: Access Control Verification
+
+This section confirms that only authorised users have system access and that administrative permissions are correctly assigned.
+
+---
+
+### 1. User Identity
+The `id` command was used to verify the active account.  
+The user **susansserver** is correctly identified as the main system account and has expected access rights.
+
+---
+
+### 2. Group Membership
+Group membership was checked using:
+
+```bash
+grep -E "sudo|adm" /etc/group
+```
+
+- The **sudo** group includes: susansserver and studentadmin  
+- The **adm** group contains standard system monitoring users  
+
+Both accounts with elevated rights are intentional and acceptable.
+
+---
+
+### 3. Home Directory Check
+Home directories were reviewed to ensure each user’s data is private.
+
+```bash
+ls -l /home
+```
+
+Each user has their own home folder, with no cross-access between accounts.
+
+---
+
+### 4. Sudo Privilege Verification
+Sudo capabilities were checked using:
+
+```bash
+sudo -l
+```
+**Result**
+The account **susansserver** is allowed to run all commands with elevated privileges, which is appropriate for an administrator.
+
+---
+
+###  Summary
+- User identities are correct  
+- Only authorised accounts have admin access  
+- Home directories are private  
+- Sudo privileges are properly assigned  
+
+System access controls are configured securely and meet required standards.
+
+**Evidence**
+
+<img width="1288" height="800" alt="week7-access-control" src="https://github.com/user-attachments/assets/27d2efa9-b7ae-4cd9-8240-84504c2a5156" />
+
+---
+---
+
+## Task 5:
+
+
