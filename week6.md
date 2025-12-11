@@ -44,8 +44,6 @@ top -bn1 | head -5
 free -h  
 df -h /
 time ssh susanserver@192.168.56.103 "echo baselinetest" 
-cat /proc/sys/vm/swappiness  
-sudo blockdev --getra /dev/sda 
 ```
 
 **Evidence - Baseline CPU Memory**
@@ -63,12 +61,6 @@ sudo blockdev --getra /dev/sda
 **Evidence: SSH Baseline**
 
 <img width="916" height="519" alt="week6-ssh-latency-before" src="https://github.com/user-attachments/assets/29ff9696-2f54-45a8-847e-96c6d4efa208" />
-
----
-
-**Evidence: Swappiness Before**
-
-<img width="1017" height="719" alt="week6-swappiness-before" src="https://github.com/user-attachments/assets/4f8552f2-bc54-4194-8ea0-54deed6253e1" />
 
 ---
 
