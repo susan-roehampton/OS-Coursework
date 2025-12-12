@@ -17,11 +17,12 @@ This coursework uses a dual-system architecture consisting of:
 
 The workstation securely connects to the server through a private virtual network. All administration of the server is performed remotely from the workstation.
 
-```
+**System Architecture Diagram**
 
-<img width="1007" height="219" alt="week1-system-architecture" src="https://github.com/user-attachments/assets/a5e40c7f-624f-4213-a800-5b35f1577cd0" />
+<img width="1007" height="219" alt="week1-system-architecture" src="https://github.com/user-attachments/assets/df6b4019-3b38-4ffe-a951-5740aaddfaf3" />
 
-```
+
+
 
 ---
 
