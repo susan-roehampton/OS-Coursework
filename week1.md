@@ -19,9 +19,7 @@ The workstation securely connects to the server through a private virtual networ
 
 **System Architecture Diagram**
 
-
-
-<img width="700" "alt="week1-system-architecture drawio (1)" src="https://github.com/user-attachments/assets/e4d7e5fa-ee50-4596-a1e5-da1dbb99b69b" />
+<img width="700" alt="week1-system-architecture drawio (1)" src="https://github.com/user-attachments/assets/cb5ad3f2-b3b4-4880-9ded-55061514ae0c" />
 
 
 
