@@ -301,6 +301,3 @@ The use of automated verification and monitoring scripts demonstrates how securi
 During Week 5, I developed a strong understanding of layered security implementation and the importance of automation in modern system administration. I learned how intrusion detection, access control, automatic patching, and monitoring scripts work together to protect a Linux server. This week improved my confidence in writing shell scripts, using SSH for automation, and verifying security controls in a professional environment.
 
 ---
-
-✅ Week 5 Completed Successfully
-
