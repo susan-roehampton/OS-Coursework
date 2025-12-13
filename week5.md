@@ -178,8 +178,11 @@ bash security-baseline.sh
 
 This script ensures continuous compliance with the defined server security baseline.
 
-### Evidence – Script Output:
-<img width="1322" height="1017" alt="week5 -security-baseline-output" src="https://github.com/user-attachments/assets/5bc011ed-0abd-4b9d-be8d-eb61f6a5f21e" />
+### Evidence:
+
+<img width="1282" height="804" alt="5-security-baseline" src="https://github.com/user-attachments/assets/801679ee-291d-4890-bee0-d4889e21dd30" />
+
+
 
 ---
 
@@ -280,7 +283,6 @@ The script demonstrates professional remote administration practices by combinin
 ### Evidence
 
 images/monitor-server-output.png
-<img width="1303" height="585" alt="monitor-server-output1" src="https://github.com/user-attachments/assets/a4e82504-be1f-4479-a329-8b23c8ee44ec" />
 
 <img width="1421" height="601" alt="monitor-server-output2" src="https://github.com/user-attachments/assets/865d3ea0-1502-421c-91b3-3cc506025a67" />
 
