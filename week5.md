@@ -283,6 +283,8 @@ The script demonstrates professional remote administration practices by combinin
 ### Evidence
 
 images/monitor-server-output.png
+<img width="1871" height="1023" alt="monitor-server-output1" src="https://github.com/user-attachments/assets/d8937872-9c32-4466-aaba-5caefb9a8fbd" />
+
 
 <img width="1421" height="601" alt="monitor-server-output2" src="https://github.com/user-attachments/assets/865d3ea0-1502-421c-91b3-3cc506025a67" />
 
