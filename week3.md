@@ -4,7 +4,7 @@
 
 ## 1. Introduction
 
-The aim of this week was to select suitable applications that represent different workload types in order to evaluate the performance of the Ubuntu Server operating system. Each application was chosen to stress a specific system resource so that CPU, memory, disk, and network performance can be analysed in later testing.
+The purpose of this week was rather to pick out the appropriate applications that display various types of workloads for the purpose of evaluating the performance of Ubuntu Server operating system. One application was chosen to stress a given system resource so CPU, memory, disk and network performance can be analyzed in later testing.
 
 ---
 
