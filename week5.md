@@ -21,7 +21,7 @@ sudo systemctl enable apparmor
 sudo systemctl start apparmor  
 sudo aa-status  
 ```
-These commands were used to enable AppArmor at boot, start the service, and verify that security profiles are actively enforced on the system.
+These commands were used to allow AppArmor at boot, start the service, and detect that security profiles are actively enforced on the system.
 
 ### Purpose
 
@@ -40,7 +40,7 @@ images/apparmor-status.png
 
 ## 3. Automatic Security Updates
 
-Automatic security updates ensure that critical patches are installed without requiring manual intervention. This reduces exposure to known vulnerabilities.
+Automatic security updates confirms that critical patches are installed without requiring manual intervention. This reduces exposure to known vulnerabilities.
 
 ### Commands Used
 
