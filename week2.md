@@ -107,5 +107,4 @@ Mitigation:
 ---
 
 ## 5. Reflection
-
-This week focused on planning rather than implementation. I developed a clear understanding of how security controls work together to protect a Linux server. Designing the threat model helped me understand how attackers target systems and how defence mechanisms such as firewalls, SSH hardening, and automatic updates reduce risk. This planning stage will guide all security configurations in the upcoming weeks.
+This week was about planning, not about doing. I have acquired a good understanding on how security controls collaborated to protect a Linux Server. To articulate it I can say that when I drafted the threat model, it was easier for me to comprehend how attackers target systems and certain defense mechanisms such as firewalls, SSH hardening, and automatic updates decrease risk/ This is the preparation state that will direct all security setups in the following weeks.
