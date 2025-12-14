@@ -3,18 +3,16 @@
 ---
 
 ## 1. Introduction
+In Week 5 the goals were implementing of advanced security controls and development of automated monitoring and verification mechanisms for the Ubuntu Server. This was accomplished by means of Mandatory Access Control(MAC), automatic patch management, intrusion detection as well as validation using shell scripts in an automated fashion. These configurations were implemented from the command line interface and accessed over SSH remotly from the workstation. This week directly addresses:
 
-The purpose of Week 5 was to implement advanced security controls and develop automated monitoring and verification mechanisms for the Ubuntu Server. This phase focused on strengthening system security through Mandatory Access Control, automatic patch management, intrusion detection, and automated validation using shell scripts. All configurations were implemented via the command-line and verified remotely using SSH from the workstation.
-
-This week directly addresses:
-- LO3: Assessing threats and applying security mechanisms  
-- LO4: Demonstrating command-line proficiency and automation  
+LO3: Assessing threats and applying security mechanisms
+LO4: Demonstrating command-line proficiency and automation
 
 ---
 
 ## 2. Mandatory Access Control – AppArmor
 
-AppArmor is a Mandatory Access Control (MAC) system used to restrict program access to system resources based on predefined security profiles. It provides an additional security layer beyond traditional file permissions.
+AppArmor is a Mandatory Access Control(MAC) system used to prevent program approach to system resources situated on predefined security profiles. It gives an external security layer beyond traditional file permissions.
 
 ### Commands Used
 
@@ -78,7 +76,7 @@ Evidence 3: Verification
 
 ## 4. Fail2Ban – Intrusion Detection and Prevention
 
-Fail2Ban is an intrusion detection system that protects the server against brute-force login attempts by banning malicious IP addresses.
+Fail2Ban is an intrusion detection system that secure the server against brute-force login attempts by banning random IP addresses.
 
 ### Installation and Activation
 
@@ -118,7 +116,7 @@ Evidence 4 – SSH Jail Active:
 
 ## 5. Security Baseline Verification Script (security-baseline.sh)
 
-The security baseline verification script was created to automatically validate that all security configurations from Week 4 and Week 5 remain enforced.
+The security baseline verification script was created to significantly validate that all security configurations from Week 4 and Week 5 remain enforced.
 
 #!/bin/bash
 
@@ -278,7 +276,7 @@ EOF
 
 ./monitor-server.sh  
 
-The script demonstrates professional remote administration practices by combining performance monitoring with live security verification.
+The script shows the professional remote administration practices by connecting performance monitoring with live security record.
 
 ### Evidence
 
@@ -293,15 +291,13 @@ images/monitor-server-output.png
 ---
 
 ## 7. Critical Analysis
+AppArmor, Fail2Ban adaptation and auto security updates have taken security position of the Ubuntu Server to a new level. AppArmor implements MAC (Mandatory Access Control) at the application level, while Fail2Ban represents one of the ways to protect your system from bruteforce SSH attacks. This is achieved through automatic updates which see to it that known vulnerabilities are patched without manual administrative effort.
 
-The implementation of AppArmor, Fail2Ban, and automatic security updates significantly strengthened the security posture of the Ubuntu Server. AppArmor provides mandatory access control at the application level, while Fail2Ban actively protects the system against brute-force SSH attacks. Automatic updates ensure that known vulnerabilities are patched without manual administrative effort.
-
-The use of automated verification and monitoring scripts demonstrates how security configurations must be continuously validated rather than relying only on initial setup. While these security mechanisms introduce minimal performance overhead, the security benefits far outweigh the resource cost.
+The following are the reasons why you should not think of security configurations as something that should be set and forgotten, but rather something that needs regular checks: It is only a precautionary measure so since it makes less impact compared to setting the configurations initially performance might be slightly affected by these security measures yet the wider benefits in terms of security completely dwarf resource expenditure.
 
 ---
 
 ## 8. Reflection
-
-During Week 5, I developed a strong understanding of layered security implementation and the importance of automation in modern system administration. I learned how intrusion detection, access control, automatic patching, and monitoring scripts work together to protect a Linux server. This week improved my confidence in writing shell scripts, using SSH for automation, and verifying security controls in a professional environment.
+In the fifth week, I was able to understand more on how to implement layered security through the use of some automated tools and also what automation really means in systems administration today. It''s possible I will learn, for example, how ids, aclas, autimatic checks and monitor scripts converge to safeguard a linux server. Those wrote codes with greater confidence this week while employed ssh for automation and also checking security controls in professional setting.
 
 ---
