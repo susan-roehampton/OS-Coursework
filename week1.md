@@ -56,9 +56,9 @@ The Windows host machine was selected as the workstation. This allows the use of
 
 - Windows PowerShell for SSH access.
 - A web browser for GitHub Pages documentation.
-- Monitoring and analysis tools directly on the host.
+- Monitoring and outline tools directly on the host.
 
-This approach reflects real-world industry practice where administrators often manage Linux servers remotely from Windows machines.
+This approach visualize real-world industry practice where administrators often manage Linux servers remotely from Windows machines.
 
 ---
 
@@ -72,13 +72,13 @@ The VirtualBox network is configured using **NAT (Network Address Translation)**
 - Keeps the server isolated from external public networks.
 - Allows outbound internet access for updates.
 
-This configuration meets the security and isolation requirements of the coursework.
+This configuration meets both the security and isolation requirements of the coursework.
 
 ---
 
 ## 6. System Specifications (CLI Evidence)
 
-The following commands were executed on the Ubuntu Server to document system specifications:
+The given commands were implemented on the Ubuntu Server to document system terms:
 
 -  uname -a  – Displays kernel and system information  
 -  free -h  – Displays memory usage  
