@@ -4,7 +4,7 @@
 
 ## 1. Introduction
 
-The purpose of this week was to design a security baseline for the Ubuntu Server and to create a structured performance testing methodology. This planning stage is essential to ensure that the server is protected against common threats while also allowing safe and reliable performance evaluation in later weeks.
+The goal of this week was to design a security baseline for the Ubuntu Server and to create a structured performance testing methodology. This planning stage is necessary to ensure that the server is protected against common threats while also allowing safe and reliable performance evaluation in later weeks.
 
 ---
 
