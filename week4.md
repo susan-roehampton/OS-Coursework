@@ -13,7 +13,7 @@ in line with the administrative constraints of the coursework.
 
 A non-root administrative user named `studentadmin` was created to enforce the principle of least privilege and reduce the security risks associated with direct root usage.
 
-### 📸 Evidence – Non-root Administrative User
+### Evidence – Non-root Administrative User
 ![Non-root user creation](images/week4-nonroot-user.png)
 <img width="1280" height="923" alt="week4-nonroot-user" src="https://github.com/user-attachments/assets/e3a16141-bba9-4fc1-aeb3-448846fbedb0" />
 
