@@ -10,7 +10,7 @@ The goal of this week was to design a security baseline for the Ubuntu Server an
 
 ## 2. Performance Testing Plan
 
-All performance testing will be conducted remotely from the Windows workstation using SSH. Performance metrics will be collected before and after optimisation to allow direct comparison.
+All performance testing will be conducted casually from the Windows workstation using SSH. Performance metrics will be collected before and after optimisation to allow direct comparison.
 
 ### Testing Approach
 - Establish a baseline performance before any heavy workloads are applied.
