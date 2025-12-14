@@ -33,12 +33,12 @@ This confirms the user had been created correctly and granted administrative pri
 
 The Uncomplicated Firewall (UFW) was enabled and configured to allow SSH access while blocking all other incoming connections.
 
-### 📸 Evidence – Firewall Enabled
+###  Evidence – Firewall Enabled
 ![UFW Enabled](images/week4-ufw-enable.png)
 <img width="1291" height="915" alt="week4-ufw- enable" src="https://github.com/user-attachments/assets/ec5377c2-adae-4f72-bdb0-0030d5dee468" />
 
 
-### 📸 Evidence – Firewall Rules
+###  Evidence – Firewall Rules
 ![UFW Status](images/week4-ufw-status.png)
 <img width="1276" height="915" alt="week4-ufw- status" src="https://github.com/user-attachments/assets/eaad5cef-b5dc-4284-8bc6-fd4e50879a6f" />
 
@@ -60,7 +60,7 @@ Firewall Status Confirmed:
 
 The SSH configuration file was edited to disable root login for enhanced security.
 
-### 📸 Evidence – Root Login Disabled
+###  Evidence – Root Login Disabled
 ![SSH Root Login Disabled](images/week4-ssh-after.png)
 <img width="1279" height="922" alt="week4-ssh-after" src="https://github.com/user-attachments/assets/cead2b85-93fe-4d4d-aa54-854a4a846bcf" />
 
@@ -86,7 +86,7 @@ ssh susanserver@10.0.2.15
 
 The login completed successfully using the non-root administrative user.
 
-### 📸 Evidence – Successful SSH Login After Hardening
+###  Evidence – Successful SSH Login After Hardening
 ![SSH Login Success](images/week4-ssh-login-after-hardening.png)
 <img width="1281" height="911" alt="week4-ssh-login-after-hardening" src="https://github.com/user-attachments/assets/2d2b769b-8f3a-4e51-b9ef-e75dd9fd04df" />
 
